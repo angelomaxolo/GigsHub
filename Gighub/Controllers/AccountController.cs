@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Gighub.Core.Models;
+using Gighub.Core.ViewModels;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Gighub.Core.Models;
-using Gighub.Core.ViewModels;
 
 namespace Gighub.Controllers
 {
@@ -368,7 +368,7 @@ namespace Gighub.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

@@ -1,5 +1,4 @@
-﻿using System;
-using Gighub.Core.Models;
+﻿using Gighub.Core.Models;
 using Gighub.Persistance;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -7,6 +6,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using System;
 
 namespace Gighub
 {
@@ -59,11 +59,11 @@ namespace Gighub
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "543789400570-2hi6e6k68o805ssv6r2el8ten3lsi3ru.apps.googleusercontent.com",
+                ClientSecret = "dARx-4iDkL5uw3jiX0WFb9vV"
+            });
         }
     }
 }
